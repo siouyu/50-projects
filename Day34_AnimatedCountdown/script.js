@@ -17,8 +17,9 @@ function resetDOM() {
 function runAnimation() {
 	nums.forEach((num, idx) => {
 		// console.log(num, idx);
-		const nextToLast = nums.length - 1;
+		const nextToLast = nums.length - 1; // nextToLast 是倒數第二個元素的索引
 		num.addEventListener("animationend", (e) => {
+			// 先確保當前處理的數字不是最後一個
 			if (e.animationName === "goIn" && idx !== nextToLast) {
 				num.classList.remove("in");
 				num.classList.add("out");
